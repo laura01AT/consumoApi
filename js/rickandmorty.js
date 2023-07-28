@@ -32,23 +32,70 @@ fetch(API_URL)
     })
 
 
-addEventListener("submit", function(event){
-    const name = document.getElementById("name").value;
-    const pass = document.getElementById("pass").value;
 
-    const nuevoComentario = {
-        name: name,
-        pass: pass
-    };
+// >>>>>>>>>>>>>>>>>>>> Comentarios <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    let comentarios = JSON.parse(this.localStorage.getItem("comenarios"));
+// Mostrar comentarios
+function displayComments() {
+    // Obtener comentarios del Local Storage
+    const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
 
-    comentarios.push(nuevoComentario);
+    // Limpiar contenedor de comentaris antes de mostrarlos
+    commentsContainer.innerHTML = '';
 
-    this.localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    // Mostrar cada comentario en contenedor
+    comments.forEach((comment) => {
+        const { name, commentText, timestamp } = comment;
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('border', 'p-3', 'mb-3');
 
-    mostrarComentarios();
-})
+        const commentHeader = document.createElement('div');
+        commentHeader.classList.add('font-weight-bold');
+        commentHeader.textContent = `${name} - ${new Date(timestamp).toLocaleString()}`;
+
+        const commentTextElement = document.createElement('div');
+        commentTextElement.textContent = commentText;
+
+        commentDiv.appendChild(commentHeader);
+        commentDiv.appendChild(commentTextElement);
+
+        commentsContainer.appendChild(commentDiv);
+    });
+}
+
+// Agregar nuevo comentario
+function addComment(event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+
+    const name = nameInput.value;
+    const commentText = commentInput.value;
+    const timestamp = Date.now();
+
+    // Obtener comentarios del Local Storage
+    const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
+
+    // Agregar nuevo comentario a la lista
+    comments.push({ name, commentText, timestamp });
+
+    // Guardar lista actualizada en Local Storage
+    sessionStorage.setItem('comments', JSON.stringify(comments));
+
+    // Limpiar campos formulario
+    nameInput.value = '';
+    commentInput.value = '';
+
+    // Mostrar comentarios actualizados
+    displayComments();
+}
+
+// Agregar un evento 'submit' al formulario para agregar comentarios
+commentForm.addEventListener('submit', addComment);
+
+// Mostrar comentarios al cargar página
+displayComments();
 
 
 

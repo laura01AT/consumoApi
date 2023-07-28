@@ -1,12 +1,6 @@
 
-body {
-  color: darkblue;
-}
-
-.container-fluid {
-  background-color: darkblue;
-}
-
 .card {
   margin: 0 auto;
+  border: 1px solid darkblue;
 }
+
