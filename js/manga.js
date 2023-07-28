@@ -23,8 +23,10 @@ function getData(){
 /*Funcion que crea las tarjetas que se mostraran en el html
 crea una tarjeta por objeto en el json, entonces crea 12 tarjetas*/
 function createCards(json){
+  const cards = document.getElementById("cards");
+  let cardContent = "";
   json.forEach(webtoon => {
-    cards.insertAdjacentHTML("beforeend",`
+    cardContent += `
     <div class="card py-3" style="width: 18rem;">
       <img src="${webtoon.coverURL}" class="card-img-top" alt="..."><!--Se agrega el coverURL-->
       <div class="card-body">
@@ -41,8 +43,11 @@ function createCards(json){
         <a href="${webtoon.shortURL}" class="card-link">Leer ahora</a>
       </div>
     </div>
-    `)
+    `
   });
+  console.log(cardContent);
+  cards.innerHTML = cardContent;
+  document.getElementById("preloader").style.display = "none";
 }
 
 //Se ejecuta la funcion principal
