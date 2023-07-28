@@ -7,7 +7,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: #ffffff;
-	color: #1d1d1d;
+	color: #2c2c2c;
 }
 
 .smaller-image {
@@ -30,7 +30,7 @@ body {
 
 /* Estilo para los botones de paginación personalizados */
 .btn-custom {
-    background-color: #000000; /* Color personalizados */
+    background-color: #2487ce; /* Color personalizados */
     color: #ffffff; /* Color del texto en los botones */
     font-size: 200%; /* Tamaño del texto */
     width: 60px; /* Ancho del botón */
