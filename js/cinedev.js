@@ -59,6 +59,8 @@ const cargarPeliculas = async () => {
   } catch (error) {
     console.log(error);
   }
+  cards.innerHTML = cardContent;
+  document.getElementById("preloader").style.display = "none";
 }
 
 cargarPeliculas();
