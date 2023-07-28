@@ -22,6 +22,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/cinedev.css">
 </head>
 
 <body>
@@ -47,22 +48,33 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-end align-items-center">
-          <ol>
-            <li><a href="index.html">Español</a></li>
-            <li>Inglés</li>
-          </ol>
-        </div>
-      </div>
-    </section><!-- End Breadcrumbs -->
-
     <!--Seccion donde se agregaran las tarjetas con javascript-->
     <h1 class="text-center">Lista de Webtoons</h1>
     <div class="row d-flex justify-content-center py-3" id="cards"></div>
+
+    <div class="container my-5" style="width: 60%;">
+      <form id="commentForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comentario:</label>
+          <textarea class="form-control" id="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom btn-form my-3">Enviar comentario</button>
+      </form>
+  
+      <!-- Contenedor para mostrar los comentarios -->
+      <div id="commentsContainer" class="mt-4"></div>
+  
+    </div>
+  
+      <!-- Contenedor para mostrar los comentarios -->
+      <div id="commentsContainer" class="mt-4"></div>
+  
+    </div>
+
 
   </main><!-- End #main -->
 
