@@ -22,6 +22,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/cinedev.css">
 </head>
 
 <body>
@@ -35,9 +36,10 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="index.html">Página principal</a></li>
-          <li><a class="nav-link scrollto" href="#pagina2">Página 2</a></li>
-          <li><a class="nav-link scrollto" href="#página3">Página 3</a></li>
-          <li><a class="nav-link scrollto" href="#página4">Página 4</a></li>
+          <li><a class="nav-link scrollto" href="page2.html">Tienda</a></li>
+          <li><a class="nav-link scrollto" href="rickandmorty.html">Rick and Morty</a></li>
+          <li><a class="nav-link scrollto" href="./cinedev.html">Cinede</a></li>
+          <li><a class="nav-link scrollto" href="batman.html">Batman</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -46,22 +48,33 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-end align-items-center">
-          <ol>
-            <li><a href="index.html">Español</a></li>
-            <li>Inglés</li>
-          </ol>
-        </div>
-      </div>
-    </section><!-- End Breadcrumbs -->
-
     <!--Seccion donde se agregaran las tarjetas con javascript-->
     <h1 class="text-center">Lista de Webtoons</h1>
     <div class="row d-flex justify-content-center py-3" id="cards"></div>
+
+    <div class="container my-5" style="width: 60%;">
+      <form id="commentForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comentario:</label>
+          <textarea class="form-control" id="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom btn-form my-3">Enviar comentario</button>
+      </form>
+  
+      <!-- Contenedor para mostrar los comentarios -->
+      <div id="commentsContainer" class="mt-4"></div>
+  
+    </div>
+  
+      <!-- Contenedor para mostrar los comentarios -->
+      <div id="commentsContainer" class="mt-4"></div>
+  
+    </div>
+
 
   </main><!-- End #main -->
 
@@ -110,13 +123,13 @@
       class="bi bi-arrow-up-short"></i></a>
 
   
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
 
   <!-- Template Main JS File -->
   <!--Agregar los link a sus javascript-->
-  <script src="assets/js/main.js"></script>
+  <!--<script src="assets/js/main.js"></script>-->
   <!--Script de la seccion de comentarios-->
-  <script src="./js/script.js"> </script>
+  <!--<script src="./js/script.js"> </script>-->
   <!--Script de la pagina que consume la api Manga Scrapper-->
   <script src="./js/manga.js"> </script>
 </body>

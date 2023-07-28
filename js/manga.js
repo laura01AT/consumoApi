@@ -11,7 +11,6 @@ const options = {
 		'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
 	}
 };
-
 /*Funcion getData(), consume la api, transforma los datos en json
 leaplica la funcion creteCards()*/
 function getData(){
@@ -23,8 +22,10 @@ function getData(){
 /*Funcion que crea las tarjetas que se mostraran en el html
 crea una tarjeta por objeto en el json, entonces crea 12 tarjetas*/
 function createCards(json){
+  const cards = document.getElementById("cards");
+  let cardContent = "";
   json.forEach(webtoon => {
-    cards.insertAdjacentHTML("beforeend",`
+    cardContent += `
     <div class="card py-3" style="width: 18rem;">
       <img src="${webtoon.coverURL}" class="card-img-top" alt="..."><!--Se agrega el coverURL-->
       <div class="card-body">
@@ -41,9 +42,108 @@ function createCards(json){
         <a href="${webtoon.shortURL}" class="card-link">Leer ahora</a>
       </div>
     </div>
-    `)
+    `
   });
+  //console.log(cardContent);
+  cards.innerHTML = cardContent;
+  document.getElementById("preloader").style.display = "none";
 }
 
 //Se ejecuta la funcion principal
 getData();
+
+//>>>>>>>>>>>>>>> Script de Comentarios <<<<<<<<<<<<<<<<<<
+const commentForm = document.getElementById('commentForm');
+const commentsContainer = document.getElementById('commentsContainer');
+
+// Mostrar comentarios
+function displayComments() {
+  // Obtener comentarios del Local Storage
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+  // Limpiar contenedor de comentaris antes de mostrarlos
+  commentsContainer.innerHTML = '';
+
+  // Mostrar cada comentario en contenedor
+  comments.forEach((comment) => {
+    const { name, commentText, timestamp } = comment;
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('border', 'p-3', 'mb-3');
+
+    const commentHeader = document.createElement('div');
+    commentHeader.classList.add('font-weight-bold');
+    commentHeader.textContent = `${name} - ${new Date(timestamp).toLocaleString()}`;
+
+    const commentTextElement = document.createElement('div');
+    commentTextElement.textContent = commentText;
+
+    commentDiv.appendChild(commentHeader);
+    commentDiv.appendChild(commentTextElement);
+
+    commentsContainer.appendChild(commentDiv);
+  });
+}
+
+// >>>>>>>>>>>>>>>>>>>> Comentarios <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// Mostrar comentarios
+function displayComments() {
+  // Obtener comentarios del Local Storage
+  const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
+
+  // Limpiar contenedor de comentaris antes de mostrarlos
+  commentsContainer.innerHTML = '';
+
+  // Mostrar cada comentario en contenedor
+  comments.forEach((comment) => {
+    const { name, commentText, timestamp } = comment;
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('border', 'p-3', 'mb-3');
+
+    const commentHeader = document.createElement('div');
+    commentHeader.classList.add('font-weight-bold');
+    commentHeader.textContent = `${name} - ${new Date(timestamp).toLocaleString()}`;
+
+    const commentTextElement = document.createElement('div');
+    commentTextElement.textContent = commentText;
+
+    commentDiv.appendChild(commentHeader);
+    commentDiv.appendChild(commentTextElement);
+
+    commentsContainer.appendChild(commentDiv);
+  });
+}
+
+// Agregar nuevo comentario
+function addComment(event) {
+  event.preventDefault();
+
+  const nameInput = document.getElementById('name');
+  const commentInput = document.getElementById('comment');
+
+  const name = nameInput.value;
+  const commentText = commentInput.value;
+  const timestamp = Date.now();
+
+  // Obtener comentarios del Local Storage
+  const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
+
+  // Agregar nuevo comentario a la lista
+  comments.push({ name, commentText, timestamp });
+
+  // Guardar lista actualizada en Local Storage
+  sessionStorage.setItem('comments', JSON.stringify(comments));
+
+  // Limpiar campos formulario
+  nameInput.value = '';
+  commentInput.value = '';
+
+  // Mostrar comentarios actualizados
+  displayComments();
+}
+
+// Agregar un evento 'submit' al formulario para agregar comentarios
+commentForm.addEventListener('submit', addComment);
+
+// Mostrar comentarios al cargar página
+displayComments();
