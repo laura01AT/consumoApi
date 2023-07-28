@@ -1,0 +1,48 @@
+/* *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} */
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #ffffff;
+	color: #1d1d1d;
+}
+
+.smaller-image {
+	max-width: 65%;
+	/* Ajusta este valor según el tamaño deseado */
+}
+
+.paginacion {
+	margin-top: 40px;
+}
+
+
+.poster {
+	transition: transform 0.3s ease;
+}
+
+.poster.zoomed {
+	transform: scale(1.1);
+}
+
+/* Estilo para los botones de paginación personalizados */
+.btn-custom {
+    background-color: #000000; /* Color personalizados */
+    color: #ffffff; /* Color del texto en los botones */
+    font-size: 200%; /* Tamaño del texto */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    padding: 0; /* Tamaño  */
+    border: none; /* Borde */
+    border-radius: 50%; /* Botón redondeado */
+    transition: background-color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+  }
+
+  /* Estilo para el hover (al pasar el cursor sobre los botones) */
+  .btn-custom:hover {
+    background-color: #ffffff; /* Color personalizado para el hover, puedes cambiar el valor */
+    /* Puedes ajustar el color o el tamaño según tus preferencias */
+  }
