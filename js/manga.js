@@ -51,41 +51,10 @@ function createCards(json){
 
 //Se ejecuta la funcion principal
 getData();
-
-//>>>>>>>>>>>>>>> Script de Comentarios <<<<<<<<<<<<<<<<<<
-const commentForm = document.getElementById('commentForm');
-const commentsContainer = document.getElementById('commentsContainer');
-
-// Mostrar comentarios
-function displayComments() {
-  // Obtener comentarios del Local Storage
-  const comments = JSON.parse(localStorage.getItem('comments')) || [];
-
-  // Limpiar contenedor de comentaris antes de mostrarlos
-  commentsContainer.innerHTML = '';
-
-  // Mostrar cada comentario en contenedor
-  comments.forEach((comment) => {
-    const { name, commentText, timestamp } = comment;
-    const commentDiv = document.createElement('div');
-    commentDiv.classList.add('border', 'p-3', 'mb-3');
-
-    const commentHeader = document.createElement('div');
-    commentHeader.classList.add('font-weight-bold');
-    commentHeader.textContent = `${name} - ${new Date(timestamp).toLocaleString()}`;
-
-    const commentTextElement = document.createElement('div');
-    commentTextElement.textContent = commentText;
-
-    commentDiv.appendChild(commentHeader);
-    commentDiv.appendChild(commentTextElement);
-
-    commentsContainer.appendChild(commentDiv);
-  });
-}
-
 // >>>>>>>>>>>>>>>>>>>> Comentarios <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+const commentForm = document.getElementById('commentForm');
+const commentsContainer = document.getElementById('commentsContainer');
 // Mostrar comentarios
 function displayComments() {
   // Obtener comentarios del Local Storage
