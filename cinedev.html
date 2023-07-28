@@ -26,7 +26,7 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="fixed-top">
 		<div class="container d-flex align-items-center justify-content-between">
-			<h1 class="logo"><a href="index.html">Consumo APIs</a></h1>
+			<h1 class="logo"><a href="./cinedev.html">Cinedev</a></h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 			<nav id="navbar" class="navbar">
@@ -34,9 +34,9 @@
 				<ul>
 					<li><a class="nav-link scrollto" href="./index.html">Página principal</a></li>
 					<li><a class="nav-link scrollto " href="mangaScrapper.html">Manga Scrapper</a></li>
-          			<li><a class="nav-link scrollto" href="page2.html">Tienda</a></li>
-          			<li><a class="nav-link scrollto" href="rickandmorty.html">Rick and Morty</a></li>
-          			<li><a class="nav-link scrollto" href="batman.html">Batman</a></li>
+					<li><a class="nav-link scrollto" href="page2.html">Tienda</a></li>
+					<li><a class="nav-link scrollto" href="rickandmorty.html">Rick and Morty</a></li>
+					<li><a class="nav-link scrollto" href="batman.html">Batman</a></li>
 				</ul>
 				<i class="bi bi-list mobile-nav-toggle"></i>
 			</nav><!-- .navbar -->
@@ -54,56 +54,75 @@
 
 	<div class="paginacion d-flex justify-content-center mt-4">
 		<button id="btnAnterior" class="btn btn-custom btn-lg me-3 rounded-circle">&#8249;</button>
+		<!-- <div>Página n</div> -->
 		<button id="btnSiguiente" class="btn btn-custom btn-lg rounded-circle">&#8250;</button>
 	</div>
-<!-- ======= Footer ======= -->
-<footer id="footer">
-    <div class="footer-top ">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 footer-contact">
-            <h4>Consumo de APIs</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-          <div class="col-lg-6 col-md-6 footer-links">
-            <h4>Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container d-md-flex py-4">
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Conversor de unidades</span></strong>. Todos los derechos reservados
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-  <!--Agregar los link a sus javascript-->
-  <script src="assets/js/main.js"></script>
-  <!--Script de la seccion de comentarios-->
-  <script src="./js/script.js"> </script>
-  
+	<div class="container my-5" style="width: 60%;">
+		<form id="commentForm">
+			<div class="form-group">
+				<label for="name">Nombre:</label>
+				<input type="text" class="form-control" id="name" required>
+			</div>
+			<div class="form-group">
+				<label for="comment">Comentario:</label>
+				<textarea class="form-control" id="comment" rows="3" required></textarea>
+			</div>
+			<button type="submit" class="btn btn-custom btn-form my-3">Enviar comentario</button>
+		</form>
+
+		<!-- Contenedor para mostrar los comentarios -->
+		<div id="commentsContainer" class="mt-4"></div>
+
+	</div>
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="footer-top ">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 footer-contact">
+						<h4>Consumo de APIs</h4>
+						<p>
+							A108 Adam Street <br>
+							New York, NY 535022<br>
+							United States <br><br>
+							<strong>Phone:</strong> +1 5589 55488 55<br>
+							<strong>Email:</strong> info@example.com<br>
+						</p>
+					</div>
+					<div class="col-lg-6 col-md-6 footer-links">
+						<h4>Links</h4>
+						<ul>
+							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container d-md-flex py-4">
+			<div class="me-md-auto text-center text-md-start">
+				<div class="copyright">
+					&copy; Copyright <strong><span>Conversor de unidades</span></strong>. Todos los derechos reservados
+				</div>
+			</div>
+			<div class="social-links text-center text-md-right pt-3 pt-md-0">
+				<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+				<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+
+	<div id="preloader"></div>
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+	<!--Agregar los link a sus javascript-->
+	<script src="assets/js/main.js"></script>
+	<!--Script de la seccion de comentarios-->
+	<script src="./js/script.js"> </script>
+
 	<script src="./js/cinedev.js"></script>
 </body>
 
