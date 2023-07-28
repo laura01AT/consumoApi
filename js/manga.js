@@ -89,7 +89,7 @@ function displayComments() {
 // Mostrar comentarios
 function displayComments() {
   // Obtener comentarios del Local Storage
-  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
 
   // Limpiar contenedor de comentaris antes de mostrarlos
   commentsContainer.innerHTML = '';
@@ -126,13 +126,13 @@ function addComment(event) {
   const timestamp = Date.now();
 
   // Obtener comentarios del Local Storage
-  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
 
   // Agregar nuevo comentario a la lista
   comments.push({ name, commentText, timestamp });
 
   // Guardar lista actualizada en Local Storage
-  localStorage.setItem('comments', JSON.stringify(comments));
+  sessionStorage.setItem('comments', JSON.stringify(comments));
 
   // Limpiar campos formulario
   nameInput.value = '';
