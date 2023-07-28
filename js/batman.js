@@ -14,7 +14,7 @@ fetch(url, options)
     const arrayElem = data.d
     console.log(arrayElem);
     arrayElem.map((elememt) =>{
-      const imag = elememt.i
+      const imag = elememt.i.imageUrl
       const name = elememt.l
       const person = elememt.s
       const year = elememt.y
@@ -23,8 +23,8 @@ fetch(url, options)
       const poster = 
       `
       <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 text-center">
-      <div class="card my-3" style="width: 20rem; height:28rem;">
-        <img src="${imag}" class="card-img-top img-thumbnail" alt="" style="height:20rem; width:auto;">
+      <div class="card my-3" style="width: 20rem; height:auto;">
+        <img src="${imag}" class="card-img-top img-thumbnail" alt="" style="height:auto; width:auto;">
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${person}</p>
