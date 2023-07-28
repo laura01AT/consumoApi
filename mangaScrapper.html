@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Consumo de API "Página principal"</title>
+  <title>Consumo de API "Manga Scrapper"</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
@@ -29,13 +29,12 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">Consumo APIs</a></h1>
+      <h1 class="logo"><a href="index.html">Manga Scrappers</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       <nav id="navbar" class="navbar">
-        <!--Agregar el link a su página-->
         <ul>
-          <li><a class="nav-link scrollto " href="mangaScrapper.html">Manga Scrapper</a></li>
+          <li><a class="nav-link scrollto " href="index.html">Página principal</a></li>
           <li><a class="nav-link scrollto" href="#pagina2">Página 2</a></li>
           <li><a class="nav-link scrollto" href="#página3">Página 3</a></li>
           <li><a class="nav-link scrollto" href="#página4">Página 4</a></li>
@@ -59,26 +58,10 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs -->
-    
-    <div>
-      <!--Aqui va la seccion de comentarios-->
-      <h2>Formulario de Comentarios</h2>
-      <form id="comentarioForm">
-        <div class="mb-3"></div>
-          <label for="nombre" class="form-label">Nombre:</label>
-          <input type="text" id="nombre" class="form-control" required placeholder="Escribe un nombre">
-        </div>
-        <div class="mb-3">
-          <label for="comentario" class="form-label">Comentario:</label>
-          <textarea id="comentario" class="form-control" rows="3" required></textarea>
-        </div>
-        <button type="submit">Enviar Comentario</button>
-      </form>
 
-      <!-- Aquí se mostrarán los comentarios guardados en Local Storage -->
-      <div id="comentarios"></div>
-    </div>
-
+    <!--Seccion donde se agregaran las tarjetas con javascript-->
+    <h1 class="text-center">Lista de Webtoons</h1>
+    <div class="row d-flex justify-content-center py-3" id="cards"></div>
 
   </main><!-- End #main -->
 
@@ -88,7 +71,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 footer-contact">
-            <h4>Consumo de APIs</h4>
+            <h4>Conversor de Unidades Pro</h4>
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
@@ -127,14 +110,14 @@
       class="bi bi-arrow-up-short"></i></a>
 
   
-  <!--<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Template Main JS File -->
-
   <!--Agregar los link a sus javascript-->
   <script src="assets/js/main.js"></script>
   <!--Script de la seccion de comentarios-->
   <script src="./js/script.js"> </script>
-  
+  <!--Script de la pagina que consume la api Manga Scrapper-->
+  <script src="./js/manga.js"> </script>
 </body>
 </html>
