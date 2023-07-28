@@ -7,7 +7,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: #ffffff;
-	color: #2c2c2c;
+	color: #0c2f49;
 }
 
 .smaller-image {
@@ -29,7 +29,7 @@ body {
 }
 
 /* Estilo para los botones de paginación personalizados */
-.btn-custom {
+.paginacion .btn-custom {
     background-color: #2487ce; /* Color personalizados */
     color: #ffffff; /* Color del texto en los botones */
     font-size: 200%; /* Tamaño del texto */
@@ -41,8 +41,15 @@ body {
     transition: background-color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
   }
 
+ .btn-form {
+  background-color: #2487ce;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+ }
+
   /* Estilo para el hover (al pasar el cursor sobre los botones) */
   .btn-custom:hover {
-    background-color: #ffffff; /* Color personalizado para el hover, puedes cambiar el valor */
-    /* Puedes ajustar el color o el tamaño según tus preferencias */
+    background-color: #2487ce7a; /* Color  hover */
+    color: #ffffff;
   }
