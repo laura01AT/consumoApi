@@ -72,7 +72,7 @@ cargarPeliculas();
 function displayComments() {
   // Obtener comentarios del Local Storage
   const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
-
+  console.log(comments)
   // Limpiar contenedor de comentaris antes de mostrarlos
   commentsContainer.innerHTML = '';
 
@@ -109,10 +109,10 @@ function addComment(event) {
 
   // Obtener comentarios del Local Storage
   const comments = JSON.parse(sessionStorage.getItem('comments')) || [];
-
+ console.log(comments)
   // Agregar nuevo comentario a la lista
   comments.push({ name, commentText, timestamp });
-
+  console.log(comments)
   // Guardar lista actualizada en Local Storage
   sessionStorage.setItem('comments', JSON.stringify(comments));
 
